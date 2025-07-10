@@ -29,7 +29,7 @@ Route::get('/categories/{id}', [CategoryController::class, 'getCategory']);
 Route::get('/books', [BookController::class, 'getBooks']);
 Route::get('/books/{id}', [BookController::class, 'getBook']);
 
-Route::middleware('auth:sanctum')->group(function () {
+Route::middleware('custom.sanctum.auth')->group(function () {
     // Auth
     Route::get('/authenticate',     [AuthController::class, 'authenticate']);
     Route::post('/logout',[AuthController::class, 'logout']);
