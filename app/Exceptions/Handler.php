@@ -47,4 +47,11 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    public function unauthenticated($request, \Illuminate\Auth\AuthenticationException $exception)
+{
+    return response()->json([
+        'message' => 'Token tidak valid atau belum login'
+    ], 401);
+}
 }
